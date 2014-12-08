@@ -49,4 +49,10 @@ Extract Zip File No Folders
     File Should Exist   ${TEMPDIR}${/}zipout${/}testcase.txt
     File Should Exist   ${TEMPDIR}${/}zipout${/}testcase-2.txt
 
+Extract Zip File Without Root Folders
+    Remove Directory  ${TEMPDIR}/${/}zipout  True
+    Extract Zip File  ${CURDIR}${/}test-noroots.zip  ${TEMPDIR}${/}zipout
+    File Should Exist   ${TEMPDIR}${/}zipout${/}main${/}testcase.txt
+    File Should Exist   ${TEMPDIR}${/}zipout${/}main${/}testcase-2.txt
+
     
